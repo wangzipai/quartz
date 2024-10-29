@@ -1,6 +1,6 @@
 ---
 date created: 2024-10-28 18:11
-date updated: 2024-10-29 17:55
+date updated: 2024-10-29 18:23
 tags:
   - spring
   - 后端
@@ -43,7 +43,7 @@ Spring IoC的核心如下：
 
 Spring提出了对象工厂的概念，由Spring工厂来管理对象的生命周期。所谓对象生命周期指的是==从对象的创建一直到对象的销毁都由Spring来管理==。我们无需再自己new对象，而是从Spring工厂中获取需要的对象。甚至**对象的依赖也由工厂来注入，无需手动注入依赖**。
 
-Spring工厂是ApplicationContext接口，通常我们使用的是AnnotationConfigApplicationContext类。其中Spring工厂内部是通过Map类型来维护的。
+Spring工厂是ApplicationContext接口，通常我们使用的是AnnotationConfigApplicationContext类。其中Spring工厂内部是通过Map类型来维护。
 
 | Key                                     | value         |
 | --------------------------------------- | ------------- |

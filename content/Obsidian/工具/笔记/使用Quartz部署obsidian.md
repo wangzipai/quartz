@@ -1,11 +1,13 @@
 ---
 date created: 2024-10-29 12:11
-date updated: 2024-10-29 13:00
+date updated: 2024-10-29 17:35
 tags:
   - 笔记
   - 分享
 share: "true"
 ---
+
+最近想整一个obsidian的笔记分享，[参考](https://lazyjoy.12123123.xyz/%E5%85%B6%E5%AE%83%E8%B5%84%E6%BA%90/Obsidian/Quartz%E4%B8%8EEnveloppe%E6%8F%92%E4%BB%B6%E7%BB%93%E5%90%88%E5%8A%A9%E5%8A%9BObsidian%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E8%8A%B1%E5%9B%AD/)
 
 ## Quartz部署
 
@@ -208,3 +210,23 @@ Send linked files：发送被链接的文件，**_保持开启_**，发布笔记
 - 对于已经发布的笔记，想要复制链接分享给他人，打开文件后执行`Create a link to this note`，粘贴发送给他人即可。
 
 其它命令的用法可参考[官方文档](https://link.zhihu.com/?target=https%3A//enveloppe.github.io/Commands)。
+
+### 上传首页
+
+此时访问会发现还是提示404，这是因为还没有上传首页的原因。
+在任意目录下新建如下文档，命名为index.md。输入一下内容
+
+```text
+
+--- 
+share: true 
+path: content 
+en-filename: index 
+title: 首页 
+created: 2024-09-13T14:36:50.000+08:00 
+updated: 2024-09-23T15:56:30.292+08:00 
+--- 
+
+这是首页内容。
+
+```

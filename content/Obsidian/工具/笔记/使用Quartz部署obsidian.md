@@ -1,10 +1,11 @@
 ---
 date created: 2024-10-29 12:11
-date updated: 2024-10-29 17:35
+date updated: 2024-10-30 11:32
 tags:
   - 笔记
   - 分享
 share: "true"
+link: "false"
 ---
 
 最近想整一个obsidian的笔记分享，[参考](https://lazyjoy.12123123.xyz/%E5%85%B6%E5%AE%83%E8%B5%84%E6%BA%90/Obsidian/Quartz%E4%B8%8EEnveloppe%E6%8F%92%E4%BB%B6%E7%BB%93%E5%90%88%E5%8A%A9%E5%8A%9BObsidian%E6%90%AD%E5%BB%BA%E6%95%B0%E5%AD%97%E8%8A%B1%E5%9B%AD/)
@@ -211,7 +212,7 @@ Send linked files：发送被链接的文件，**_保持开启_**，发布笔记
 
 其它命令的用法可参考[官方文档](https://link.zhihu.com/?target=https%3A//enveloppe.github.io/Commands)。
 
-### 上传首页
+## 上传首页
 
 此时访问会发现还是提示404，这是因为还没有上传首页的原因。
 在任意目录下新建如下文档，命名为index.md。输入一下内容
@@ -230,3 +231,19 @@ updated: 2024-09-23T15:56:30.292+08:00
 这是首页内容。
 
 ```
+
+## quartz配置修改
+
+### 修改链接处理
+
+此时点击文章中的双链，会发现跳转到404页面。通过url可以看到这是因为链接多了一个文件夹。可以通过在`quartz.config.ts`修改链接处理来解决这个问题。
+
+此插件解析链接并处理它们以指向正确的位置，详细说明参考[官方文档](https://quartz.jzhao.xyz/plugins/CrawlLinks)。这里应改成相对路径，不然在不同文件夹下点击笔记跳转时会出现问题。此外，可以开启懒加载选项，优化浏览体验。
+
+```ts
+      Plugin.CrawlLinks({ markdownLinkResolution: "relative", lazyLoad: true }),
+```
+
+### 其余修改
+
+均参照[lazyjoy的笔记](https://lazyjoy.12123123.xyz/%E5%85%B6%E5%AE%83%E8%B5%84%E6%BA%90/Obsidian/Quartz%E4%B8%AA%E4%BA%BA%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/)

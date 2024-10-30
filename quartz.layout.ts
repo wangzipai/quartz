@@ -57,7 +57,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(
       Component.RecentNotes({
         title: "最近更新",
-        showTags: true,
+        showTags: false,
         limit: 4,
         filter: (f) => {
           if (f.filePath?.endsWith("index.md")) {

@@ -1,6 +1,6 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-import * as ExtraComponent from "./quartz/extra/components"
+import * as ExtraComponent from "./quartz/components"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {

@@ -3,7 +3,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import overlayexplorerStyle from "./styles/overlayexplorer.scss"
 
 // @ts-ignore
-import script from "./scripts/overlayexplorer.inline"
+import script from "../extra/components/scripts/overlayexplorer.inline"
 import { FileNode, Options } from "../components/ExplorerNode"
 import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"

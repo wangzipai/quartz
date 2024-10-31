@@ -1,6 +1,6 @@
 ---
 date created: 2024-10-28 18:11
-date updated: 2024-10-31 17:02
+date updated: 2024-10-31 17:04
 tags:
   - spring
   - 后端
@@ -106,7 +106,7 @@ Spring插入了若干个[[../编程模型及方法/ORM|ORM]]框架，提供了OR
 
 ## Spring MVC模块
 
-Sping MVC框架是一个全功能的构建Web应用程序的MVC实现。
+Sping [[../编程模型及方法/MVC|MVC]]框架是一个全功能的构建Web应用程序的MVC实现。
 
 SpringMVC框架提供清晰的角色划分：控制器、验证器、命令对象、表单对象和模型对象、分发器、处理器映射和视图解析器，Spring支持多种视图技术。
 

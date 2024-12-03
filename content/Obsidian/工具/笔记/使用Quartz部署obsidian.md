@@ -1,6 +1,6 @@
 ---
-date created: 2024-10-29 12:11
-date updated: 2024-10-30 11:32
+date: 2024-10-29 12:11
+updated: 2024-12-03 21:45
 tags:
   - 笔记
   - 分享
@@ -247,3 +247,9 @@ updated: 2024-09-23T15:56:30.292+08:00
 ### 其余修改
 
 均参照[lazyjoy的笔记](https://lazyjoy.12123123.xyz/%E5%85%B6%E5%AE%83%E8%B5%84%E6%BA%90/Obsidian/Quartz%E4%B8%AA%E4%BA%BA%E9%85%8D%E7%BD%AE%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/)
+
+#### 移动端导航目录
+
+在`quartz.layout.ts`中修改，不是在`quartz.config.ts`中，原文写错了。
+
+![image.png](https://raw.githubusercontent.com/wangzipai/my_ob_pic/main/20241030151132.png)

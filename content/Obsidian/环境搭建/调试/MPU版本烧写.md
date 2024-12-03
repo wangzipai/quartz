@@ -1,9 +1,11 @@
 ---
-date created: 2024-11-25 16:10
-date updated: 2024-11-25 16:20
+date: 2024-11-25 16:10
 share: "true"
 link: "false"
+updated: 2024-12-03 18:08
 ---
+
+p
 
 # 方法一、仅使用于烧写过版本板子，新板子不适用
 

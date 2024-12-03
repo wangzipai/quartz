@@ -1,9 +1,10 @@
 ---
 tags:
   - obsidian
-date updated: 2024-12-03 11:46
+date: 2024-12-03 11:46
 share: "true"
-link: "true"
+link: "false"
+updated: 2024-12-03 21:53
 ---
 
 ## 设置

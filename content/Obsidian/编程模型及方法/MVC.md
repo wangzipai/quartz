@@ -1,6 +1,6 @@
 ---
-date created: 2024-10-31 17:03
-date updated: 2024-10-31 17:04
+date: 2024-10-31 17:03
+updated: 2024-12-03 21:44
 tags:
   - 设计模式
 share: "true"

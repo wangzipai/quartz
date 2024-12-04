@@ -5,28 +5,29 @@ share: "true"
 path: content
 en-filename: index
 title: 首页
-updated: 2024-12-04 17:49
+updated: 2024-12-04 18:02
 ---
 
-这个是首页
+---
 
-```contributionGraph
-title: Contributions
-graphType: default
-dateRangeValue: 365
-dateRangeType: LATEST_DAYS
-startOfWeek: 1
-showCellRuleIndicators: true
-titleStyle:
-  textAlign: left
-  fontSize: 15px
-  fontWeight: normal
-dataSource:
-  type: PAGE
-  value: ""
-  dateField: {}
-fillTheScreen: false
-enableMainContainerShadow: false
-cellStyleRules: []
+<strong>🆕 最近创建：</strong>
 
-```
+<ul>
+  {% assign recent_notes = site.notes | sort: "date created" | reverse %}
+  {% for note in recent_notes | limit: 6 %}
+    <li>
+      {{ note['date created']}} — <a class="internal-link" href="{{ note.url }}">{{ note.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<strong>⏰ 最近更新：</strong>
+
+<ul>
+  {% assign recent_notes = site.notes | sort: "date modified" | reverse %}
+  {% for note in recent_notes | limit: 6 %}
+    <li>
+      {{ note['date modified']}} — <a class="internal-link" href="{{ note.url }}">{{ note.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

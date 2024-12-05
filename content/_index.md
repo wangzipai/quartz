@@ -5,7 +5,376 @@ share: "true"
 path: content
 en-filename: index
 title: 首页
-updated: 2024-12-05 10:05
+updated: 2024-12-05 10:58
 ---
 
 [[Obsidian/|目录]]
+
+[History](tags/history)
+
+- cache
+- ESP-Hosted-NG bluetooth
+- ESP-Hosted-NG 软件和硬件设置
+- ESP-Hosted-NG 获取设备信息
+- ESP-Hosted-NG
+- ESP-Hosted-NG移植指南
+- ESP-Hosted
+- NIC
+- RCC和RTC区别
+- Systick
+- Ethernet global interrupt和Ethernet Wakeup global interrupt的区别
+- MII和RMII
+- SMI
+- 为什么使用外置的PHY芯片
+- 裕泰phy芯片读写ext寄存器
+- 为什么有的以太网驱动要分为emac和enet两个部分
+- ICACHE
+- MPU内存保护
+- acm ncm ecm 接口
+- CherryUSB
+- RNDIS
+- USB IP核
+- USB基本概念（2.0）
+- USB描述符
+- 枚举
+- __disable_irq() 和 __enable_irq()定义在哪？
+- A安全
+- B配置
+- N诊断
+- ocpp2.0.1简介
+- L固件管理
+- 勘误表
+- 架构与拓扑
+- 规范
+- 附录
+- ctep
+- NIST 手册44 2020 3.40
+- _Index_of_OCPP-2.0.1_(all_files)
+- ReadMe
+- OCPP1.6
+- ocpp1.6安全升级过程
+- 075安装证书
+- CertificateHashDataType字段获取
+- octt安全固件升级
+- _Index_of_OCTT
+- 开放充电协议与私有协议⽐较
+- lambda函数作为槽函数
+- QByteArray
+- Qt Embedded
+- QMake
+- QtCreator常用快捷键
+- qmake和cmake的区别
+- Qt开发入门
+- CGI
+- http协议
+- ASP
+- http协议、get和post请求
+- DOM元素
+- import Maps
+- RESTful API
+- token和cookie
+- JSP
+- servlet
+- scoped 属性
+- hash模式和history模式
+- new router 声明方式
+- router-view作用
+- Vue开发环境搭建
+- 双向数据绑定
+- 0. 简介
+- 1. 开始使用vue
+- 挂载和渲染
+- CSP
+- CSRF攻击
+- XSS 攻击
+- XSS攻击和CSRF攻击的区别
+- mongoose
+- nginx部署
+- WebNet
+- nginx
+- 反向代理
+- 处理文件
+- 如何使用import Maps按需三方库
+- DC桩基础知识
+- OPEN原理
+- 充电引导
+- 充电桩基础
+- 安规
+- CMSIS
+- GNU
+- GPL许可协议
+- IEEE
+- HCI
+- MIT 开源协议
+- POSIX 和 CMSIS 接口
+- POSIX
+- MongoDB
+- MQTT 主题与通配符（Topics & Wildcards）
+- MQTT 保留消息是什么？如何使用？
+- mqtt
+- 共享订阅
+- MQTT 持久会话与 Clean Session 详解
+- [[./Obsidian/后端/spring|spring]]
+- [[./Obsidian/后端/springboot|springboot]]
+- [[./Obsidian/后端/动态代理|动态代理]]
+- [[./Obsidian/后端/反射机制|反射机制]]
+- D2安全
+- EATON需求
+- 安全需求
+- 签名和验签过程
+- gd32安全保护
+- CryptoAuthLib库
+- 加密芯片
+- ocpp1.6J安全
+- octt安全固件升级
+- OCTT安全测试
+- TEE OS
+- Trust Firmware
+- Trust Zone
+- secure boot
+- secureboot实现
+- 安全启动
+- README
+- 0.tls协议概括
+- 1.tls记录层协议
+- SSL TLS 版本 差异
+- 密码套件
+- 2.TLS握手流程
+- 加密与签名
+- ARM PSA 安全模型
+- FIP
+- COT
+- OP-TEE 安全存储
+- SMC
+- TBBR
+- OP-TEE
+- SP_min和optee
+- TF-A和TF-M的区别
+- TF-A和TrustZone的区别
+- TF-A如何实现TrustZone技术的
+- Trusted Firmware-A
+- Trusted Firmware-A模拟
+- TF-A是如何使用EL0-3这四个层级的
+- 为什么要分为安全世界和非安全世界
+- TrustZone
+- Trusted Firmware-M
+- DES
+- ECC加密算法
+- ECDSA
+- RSA
+- AES
+- tiny-AES-c
+- XOR加密
+- 对称算法
+- 密码学标准
+- 网络信息安全基本属性
+- 英国新规解读
+- QEMU
+- QEMU不同版本
+- qemu常见参数
+- 使用qemu模拟arm系统
+- 虚拟化技术
+- qemu搭建SAM9X60环境
+- OID
+- OCSP
+- PKSC系列标准
+- PKI公钥基础设施
+- 数字证书
+- 生成本地证书
+- 固件分析
+- [[./Obsidian/工具/flac批量转换成mp3|flac批量转换成mp3]]
+- Webdav
+- [[_index|_index]]
+- Excalidraw字体设置
+- [[./Obsidian/工具/笔记/Obsidian配置|Obsidian配置]]
+- [[./Obsidian/工具/笔记/使用Quartz部署obsidian|使用Quartz部署obsidian]]
+- [[./Obsidian/工具/笔记/卢曼的卡片盒笔记法：Zettelkasten Method|卢曼的卡片盒笔记法：Zettelkasten Method]]
+- 双向链接
+- 踩过的坑
+- 在 Obsidian 中使用本地 LLM
+- arp-scan
+- nemesis
+- netdiscover
+- Binutils
+- ARM程序加载
+- cmake和makefile
+- env工具
+- [[Obsidian/工程/Image$Limit 的含义.md|Image$Limit 的含义]]
+- sct分散加载文件
+- keil设置
+- 新建keil工程
+- 芯片支持包
+- ld链接器文件
+- repo
+- RO、RW、ZI和代码段
+- scons
+- config-loader
+- the-super-tiny-compiler
+- valgrind内存排查
+- BSD Socket
+- freertos posix
+- freertos任务创建常见问题
+- FreeRTOS内核
+- 事件组
+- 二值信号量
+- buildroot
+- genimage 打包镜像
+- Linux启动流程
+- UEFI
+- 为什么要分级引导？
+- 在qemu环境下使用uboot启动linux
+- 系统启动方式
+- 解压打包img文件
+- 工具链区别
+- debugfs
+- DRM
+- FD_SET
+- framebuffer
+- adduser
+- cpio
+- dd
+- indent
+- dpkg
+- Linux Graphics Stack
+- 互斥锁和自旋锁
+- 信号量
+- 内核信号量
+- 无名信号量
+- 有名信号量
+- 用户态信号量
+- RT-Thread
+- 事件集
+- 线程
+- rtthread的网络架构
+- 动态内存申请为什么要内存对齐？
+- 可移植性
+- 线程安全和可重入
+- 进程、线程和任务
+- ESP-IDF搭建
+- gitlab搭建
+- PBS部署及使用
+- Proxmox安装
+- PVE ceph超融合生产环境安装部署
+- Qt的安装
+- Ubuntu搭建
+- git翻墙切换
+- Quicker复制Word图片原图到其他程序
+- quicker简介
+- win11网易云插件
+- win无法共享网络修复
+- WSL2 kali使用gui桌面
+- WSL2 kali使用yocto
+- WSL2 备份和还原
+- WSL2 安装docker
+- WSL2 无法翻墙
+- WSL2使用配置
+- WSL2连接不了网络
+- 启用systemd
+- 安装mqtt服务器
+- tun模式
+- 自动化测试环境
+- [[./Obsidian/环境搭建/调试/MPU版本烧写|MPU版本烧写]]
+- 账号密码
+- 为何三元锂电池不能充满电，而磷酸铁锂需要定期充满？
+- LSB
+- NRZI编码
+- NRZ编码
+- RZ编码
+- [[./Obsidian/编程模型及方法/DAO|DAO]]
+- [[./Obsidian/编程模型及方法/MVC|MVC]]
+- [[./Obsidian/编程模型及方法/MVVM模式|MVVM模式]]
+- [[./Obsidian/编程模型及方法/依赖注入|依赖注入]]
+- 发布者订阅者
+- 生产者消费者
+- 组件编程
+- [[./Obsidian/编程模型及方法/ORM|ORM]]
+- 1.10C++函数
+- 1.1.C++基本语法
+- 1.0.C++学习
+- 1.12C++数组
+- 1.13C++字符串
+- 1.11C++数字
+- 1.15C++引用
+- 1.16C++日期和时间
+- 1.14C++指针
+- 1.18C++数据结构
+- 1.2.C++数据类型
+- 1.17C++基本的输入输出
+- 1.3.C++变量类型
+- 1.4.C++变量作用域
+- 1.5.C++常量
+- 1.7C++运算符
+- 1.6C++修饰符类型
+- 1.8C++循环
+- 1.7C++存储类
+- 1.9C++判断
+- 2.1C++继承
+- 2.0C++类和对象
+- 2.3C++多态
+- 2.4C++数据抽象
+- 2.2C++重载运算符和重载函数
+- 3.0C++文件和流
+- 2.6C++接口
+- 2.5C++数据封装
+- 3.1C++异常处理
+- 3.3C++命名空间
+- 3.2C++动态内存
+- 3.6C++信号处理
+- 3.7C++多线程
+- 3.4C++模板
+- 3.5C++预处理器
+- 3.8C++Web编程
+- 4.0C++STL教程
+- 4.1C++标准库
+- Hash算法
+- C语言的封装
+- intrinsic函数
+- malloc、calloc、realloc、和free
+- 可变参数
+- restrict关键字
+- 各数据结构优缺点
+- 哈希队列
+- __ASM
+- [[./Obsidian/编程语言/Java/JDBC|JDBC]]
+- perl基础语法
+- perl简介
+- CSS基础
+- HTML基础
+- ECharts入门
+- JavaScript基础
+- cJSON
+- 自动化测试参数说明
+- 自动化测试硬件安装
+- rf框架下chrome使用无头模式
+- ethernetif.c
+- LWIP
+- LWIP的线程模型
+- LWIP内存管理
+- LWIP移植到rtthread的网络架构下
+- pbuf
+- 带操作系统移植LWIP
+- netif结构体
+- NAT
+- capwap
+- cfg80211
+- hostapd
+- iw
+- mac80211
+- nl80211
+- MAC基础
+- linux 80211栈
+- wpa_supplicant
+- FTP
+- Wi-Sun
+- Wi-Sun项目设计
+- 网络打洞
+- 蓝牙基础知识学习笔记
+- Blue Z
+- MCU web设计
+- MPU CS项目概要设计
+- 参数存储
+- 证书管理
+- [[./Obsidian/踩过的坑/以太网BUG解决过程记录|以太网BUG解决过程记录]]
+- [[./Obsidian/踩过的坑/客户平台无法连接问题|客户平台无法连接问题]]
+- stm32h563 bsp复盘
+

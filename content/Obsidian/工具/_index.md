@@ -1,5 +1,5 @@
 ---
-{"date created":"2024-10-29 17:12","date updated":"2024-10-29 17:26","share":"true","path":"content","en-filename":"index","title":"首页","updated":"2024-12-05 15:40","publish":true,"PassFrontmatter":true}
+{"date created":"2024-10-29 17:12","date updated":"2024-10-29 17:26","share":"true","path":"content","en-filename":"index","title":"首页","updated":"2024-12-05 15:48","publish":true,"PassFrontmatter":true}
 ---
 
 
@@ -11,7 +11,7 @@
 
 | File                                                                               | 目录                 | 更新时间                         |
 | ---------------------------------------------------------------------------------- | ------------------ | ---------------------------- |
-| [[Obsidian/工具/笔记/使用Quartz部署obsidian\|使用Quartz部署obsidian]]                       | Obsidian/工具/笔记     | 3:29 PM - December 05, 2024  |
+| [[Obsidian/工具/笔记/使用Quartz部署obsidian\|使用Quartz部署obsidian]]                       | Obsidian/工具/笔记     | 4:16 PM - December 05, 2024  |
 | [[Obsidian/工具/笔记/dataview的简单使用\|dataview的简单使用]]                                 | Obsidian/工具/笔记     | 11:34 AM - December 05, 2024 |
 | [[Typora/以太网/ｐｉｎｇ过程\|ｐｉｎｇ过程]]                                                   | Typora/以太网         | 11:59 AM - December 04, 2024 |
 | [[Obsidian/踩过的坑/以太网BUG解决过程记录\|以太网BUG解决过程记录]]                                    | Obsidian/踩过的坑      | 9:55 PM - December 03, 2024  |

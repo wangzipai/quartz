@@ -1,11 +1,10 @@
 ---
 date: 2025-03-05 10:35
 updated: 2025-03-05 13:28
-tags:
-  - ocpp
-  - Everest
-link: "false"
-share: "true"
+tags: ocpp,Everest
+link: false
+share: true
+publish: true
 ---
 
 # 项目概述

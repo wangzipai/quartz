@@ -1,7 +1,8 @@
 ---
 date: 2025-03-05 10:35
-updated: 2025-03-05 13:28
-tags: ocpp,Everest
+updated: 2025-03-05 15:51
+tags:
+  - ocpp,Everest
 link: false
 share: true
 publish: true
@@ -12,6 +13,54 @@ publish: true
 EVerest-Framework 是一个支持多语言模块化开发的框架，主要用于电动汽车充电基础设施的开发。从代码中可以看出，它支持 C++、JavaScript、Rust 和 Python 编程语言的模块。
 
 # 项目结构
+
+```sh
+EVerest-Framework/
+│
+├── cmake/                  # CMake 模块和辅助函数
+│   ├── NodeApiVersion.cmake
+│   └── find-mqttc.cmake
+│
+├── everestjs/              # JavaScript 模块支持
+│   ├── CMakeLists.txt
+│   ├── conversions.cpp
+│   └── ...
+│
+├── everestpy/              # Python 模块支持
+│   ├── CMakeLists.txt
+│   ├── setup.cfg
+│   └── src/
+│       └── everest/
+│
+├── everestrs/              # Rust 模块支持（可选）
+│   └── everestrs_sys/
+│
+├── include/                # 头文件
+│   ├── compile_time_settings.hpp.in
+│   └── ...
+│
+├── lib/                    # 核心库实现
+│   ├── config.cpp          # 配置系统实现
+│   └── ...
+│
+├── schemas/                # JSON Schema 定义
+│   ├── config.yaml
+│   ├── manifest.yaml
+│   ├── interface.yaml
+│   └── ...
+│
+├── src/                    # 源代码
+│   ├── manager.cpp         # 主管理器实现
+│   ├── controller/
+│   └── ...
+│
+└── tests/                  # 测试代码
+    ├── CMakeLists.txt
+    ├── test_config.cpp
+    ├── test_configs/
+    ├── test_modules/
+    └── test_interfaces/
+```
 
 ```mermaid
 graph LR
@@ -55,6 +104,7 @@ classDiagram
         cpp
         javascript
         python
+        rust
     }
     
     ModuleStartInfo --> Language
@@ -570,3 +620,5 @@ graph LR
 
 - CodeCoverage.cmake (用于代码覆盖率测试)
 - 元编程宏库 (来自 libextobjc)
+- EVerest-timer
+- EVerest-log

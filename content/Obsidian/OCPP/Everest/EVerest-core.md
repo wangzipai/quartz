@@ -1,6 +1,6 @@
 ---
 date: 2025-03-05 10:33
-updated: 2025-03-11 11:39
+updated: 2025-03-11 14:40
 tags: Everest,ocpp
 link: 
 publish: true
@@ -430,12 +430,199 @@ charging_schedules_timer->start();
 
 ### 启动流程
 
+```mermaid
+sequenceDiagram
+    participant E as EVerest框架
+    participant O as OCPP模块
+    participant CP as ChargePoint核心
+    participant EM as EVSE管理器
+    participant S as 安全模块
+    
+    E->>O: 构造
+    O->>O: 依赖注入
+    E->>O: init()
+    O->>O: 初始化EVSE Ready Map
+    O->>EM: 订阅EVSE Ready事件
+    O->>O: 加载配置文件
+    O->>O: 创建ChargePoint实例
+    O->>S: 创建EvseSecurity包装
+    E->>O: ready()
+    O->>O: 初始化EVSE连接器映射
+    O->>CP: 注册多个回调函数
+    O->>CP: 启动WebSocket连接
+    O->>O: 设置充电计划定时器
+```
+
 1. 模块构造 - 依赖注入
 2. init() - 初始化内部状态
 3. ready() - 启动服务
 4. 建立WebSocket连接
 5. 注册回调函数
 6. 开始定时任务
+
+#### EVSE就绪映射初始化
+
+模块使用 `evse_ready_map` 追踪所有EVSE的就绪状态：
+
+```cpp
+void OCPP::init_evse_ready_map() {
+    std::lock_guard<std::mutex> lk(this->evse_ready_mutex);
+    for (size_t evse_id = 1; evse_id <= this->r_evse_manager.size(); evse_id++) {
+        this->evse_ready_map[evse_id] = false;
+    }
+}
+```
+
+在init方法中，模块订阅每个EVSE的就绪状态：
+
+```cpp
+for (size_t evse_id = 1; evse_id <= this->r_evse_manager.size(); evse_id++) {
+    this->r_evse_manager.at(evse_id - 1)->subscribe_ready([this, evse_id](bool ready) {
+        std::lock_guard<std::mutex> lk(this->evse_ready_mutex);
+        if (ready) {
+            this->evse_ready_map[evse_id] = true;
+            this->evse_ready_cv.notify_one();
+        }
+    });
+}
+```
+
+这种设计确保OCPP模块只有在所有EVSE都准备好后才会完全启动服务。
+
+#### 配置文件处理
+
+OCPP模块处理两种配置文件：
+
+- 主配置文件：包含基本OCPP设置
+- 用户配置文件：包含用户自定义设置
+
+从哪里传进去的？
+
+```cpp
+// 寻找并加载主配置文件
+auto configured_config_path = fs::path(this->config.ChargePointConfigPath);
+if (!fs::exists(configured_config_path) && configured_config_path.is_relative()) {
+    configured_config_path = this->ocpp_share_path / configured_config_path;
+}
+
+// 解析JSON配置
+std::ifstream ifs(config_path.c_str());
+std::string config_file((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
+auto json_config = json::parse(config_file);
+json_config.at("Core").at("NumberOfConnectors") = this->r_evse_manager.size();
+
+// 合并用户配置
+if (fs::exists(user_config_path)) {
+    std::ifstream ifs(user_config_path.c_str());
+    std::string user_config_file((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
+    const auto user_config = json::parse(user_config_file);
+    json_config.merge_patch(user_config);
+}
+```
+
+这种方法允许系统管理员通过两个配置文件分别维护基本设置和用户定制，增强了配置的灵活性。
+
+#### EVSE-连接器映射建立
+
+OCPP需要维护EVerest内部EVSE/连接器ID与OCPP协议ID的映射关系
+
+```c
+void OCPP::init_evse_connector_map() {
+    int32_t ocpp_connector_id = 1; // OCPP连接器ID
+    int32_t evse_id = 1;           // EVerest EVSE管理器ID
+    
+    for (const auto& evse : this->r_evse_manager) {
+        const auto _evse = evse->call_get_evse();
+        std::map<int32_t, int32_t> connector_map; // 映射EVerest连接器ID到OCPP连接器ID
+        
+        // 检查EVSE ID是否连续
+        if (_evse.id != evse_id) {
+            throw std::runtime_error("Configured evse_id(s) must be starting with 1 counting upwards");
+        }
+        
+        // 处理每个连接器
+        for (const auto& connector : _evse.connectors) {
+            connector_map[connector.id] = ocpp_connector_id;
+            this->connector_evse_index_map[ocpp_connector_id] = evse_id - 1; // 索引对应r_evse_manager
+            ocpp_connector_id++;
+        }
+        
+        // 处理没有显式连接器的EVSE
+        if (connector_map.size() == 0) {
+            this->connector_evse_index_map[ocpp_connector_id] = evse_id - 1;
+            connector_map[1] = ocpp_connector_id;
+            ocpp_connector_id++;
+        }
+        
+        this->evse_connector_map[_evse.id] = connector_map;
+        evse_id++;
+    }
+}
+```
+
+这个映射是OCPP模块的核心数据结构之一，用于在OCPP连接器ID与EVerest内部ID之间转换，确保消息正确路由。
+
+#### ChargePoint核心创建
+
+在init方法结束时，模块创建了OCPP通信的核心组件
+
+```cpp
+this->charge_point = std::make_unique<ocpp::v16::ChargePoint>(
+    json_config.dump(),                         // 配置JSON
+    this->ocpp_share_path,                      // 共享路径
+    user_config_path,                           // 用户配置路径
+    std::filesystem::path(this->config.DatabasePath),  // 数据库路径
+    sql_init_path,                              // SQL初始化脚本路径
+    std::filesystem::path(this->config.MessageLogPath),  // 消息日志路径
+    std::make_shared<EvseSecurity>(*this->r_security));  // 安全组件
+```
+
+这一步创建了处理所有OCPP通信的核心对象，并为其提供了:
+
+- 配置数据
+- 持久化存储位置
+- 日志记录路径
+- 安全接口
+
+EvseSecurity是一个适配器类，将EVerest安全接口转换为OCPP库需要的接口格式。
+
+#### 回调函数注册
+
+在ready方法中，模块注册了多个回调函数，建立了OCPP事件与EVerest动作之间的桥梁
+
+##### 充电控制回调
+
+```cpp
+// 暂停充电回调
+this->charge_point->register_pause_charging_callback([this](int32_t connector) {
+    if (this->connector_evse_index_map.count(connector)) {
+        return this->r_evse_manager.at(this->connector_evse_index_map.at(connector))->call_pause_charging();
+    } else {
+        return false;
+    }
+});
+
+// 恢复充电回调
+this->charge_point->register_resume_charging_callback([this](int32_t connector) {
+    if (this->connector_evse_index_map.count(connector)) {
+        return this->r_evse_manager.at(this->connector_evse_index_map.at(connector))->call_resume_charging();
+    } else {
+        return false;
+    }
+});
+
+// 停止交易回调
+this->charge_point->register_stop_transaction_callback([this](int32_t connector, ocpp::v16::Reason reason) {
+    if (this->connector_evse_index_map.count(connector)) {
+        types::evse_manager::StopTransactionRequest req;
+        req.reason = types::evse_manager::string_to_stop_transaction_reason(
+            ocpp::v16::conversions::reason_to_string(reason));
+        return this->r_evse_manager.at(this->connector_evse_index_map.at(connector))->call_stop_transaction(req);
+    } else {
+        return false;
+    }
+});
+```
 
 ### OCPP消息处理流程
 

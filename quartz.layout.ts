@@ -57,7 +57,7 @@ export const defaultContentPageLayout: PageLayout = {
         },
         sort: (f1, f2) => {
           if (f1.dates && f2.dates) {
-            if (Math.abs(f2.dates.modified.getDay() - f1.dates.modified.getDay())<=3) {
+            if (Math.abs(f2.dates.modified.getDate() - f1.dates.modified.getDate())<=3) {
               return f2.dates.created.getTime() - f1.dates.created.getTime()
             }
             return f2.dates.modified.getTime() - f1.dates.modified.getTime()

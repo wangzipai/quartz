@@ -26,7 +26,7 @@ liblog 是 EVerest 框架的一个 C++ 日志和异常处理库,它基于 Boost.
 2. 支持彩色日志输出
 3. 集成了异常处理机制
 
-看起来并没有实现[[/content/Notes/OCPP/Everest/EVerest-timer#日志回放功能|日志回放功能]]
+看起来并没有实现[日志回放功能](./EVerest-timer.md#日志回放功能)
 
 # 使用方法
 

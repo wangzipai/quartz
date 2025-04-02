@@ -35,7 +35,7 @@ All documentation and the issue tracking can be found in our main repository her
 
 # 与 everest-framework 的集成
 
-从 [[/content/Notes/OCPP/Everest/EVerest-framework|EVerest-framework]] 的 `Cmakelists.txt` 中，我们可以看到 libtimer 与 EVerest-framework 的关系：
+从 [EVerest-framework](./EVerest-framework.md) 的 `Cmakelists.txt` 中，我们可以看到 libtimer 与 EVerest-framework 的关系：
 
 1. EVerest-framework 依赖于 EVerest-timer（即 libtimer）
 2. 在 CMake 配置中，EVerest-framework 将 EVerest-timer 作为必需的依赖项

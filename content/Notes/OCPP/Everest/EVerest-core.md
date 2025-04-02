@@ -16,7 +16,7 @@ date updated: 2025-03-17 17:52
 
 1. everest-cmake - 项目的构建系统工具
 2. Boost库 - 使用了filesystem、program_options、system和thread组件
-3. [[/content/Notes/OCPP/Everest/EVerest-framework|EVerest-framework]] - 核心框架
+3. [EVerest-framework](./EVerest-framework.md) - 核心框架
 4. everest-sunspec - 太阳能相关组件
 5. everest-modbus - Modbus通信协议支持
 6. everest-ocpp - 开放充电点协议(Open Charge Point Protocol)支持
@@ -498,7 +498,7 @@ OCPP模块处理两种配置文件：
 - 主配置文件：包含基本OCPP设置
 - 用户配置文件：包含用户自定义设置
 
-OCPP模块配置文件处理流程里面详细写了配置文件的处理流程。
+[OCPP模块配置文件处理流程](./%E6%9E%84%E5%BB%BA/OCPP%E6%A8%A1%E5%9D%97%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B.md)里面详细写了配置文件的处理流程。
 
 ```cpp
 // 寻找并加载主配置文件

@@ -623,5 +623,5 @@ graph LR
 
 - CodeCoverage.cmake (用于代码覆盖率测试)
 - 元编程宏库 (来自 libextobjc)
-- [[/content/Notes/OCPP/Everest/EVerest-timer|EVerest-timer]]
-- [[/content/Notes/OCPP/Everest/EVerest-logging|EVerest-logging]]
+- [EVerest-timer](./EVerest-timer.md)
+- [EVerest-logging](./EVerest-logging.md)

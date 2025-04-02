@@ -1,12 +1,12 @@
 ---
-date: "2025-03-05 15:51"
+date: 2025-03-05 15:51
 tags:
   - Everest
   - ocpp
 publish: true
 link: 
 share: true
-updated: "2025-03-24T20:22:00+08:00"
+updated: 2025-03-24T20:22:00+08:00
 ---
 
 # 项目概述
@@ -186,7 +186,7 @@ template <typename TimerClock = date::utc_clock> class Timer {
 - `date::utc_clock`：UTC时钟
 - `std::chrono`中的其他时钟类型
 
-timer是如何通过模板实现自动适配不同时间类型
+[timer是如何通过模板实现自动适配不同时间类型](./timer%E6%98%AF%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E6%A8%A1%E6%9D%BF%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E9%80%82%E9%85%8D%E4%B8%8D%E5%90%8C%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B.md)
 
 #### 类型安全
 

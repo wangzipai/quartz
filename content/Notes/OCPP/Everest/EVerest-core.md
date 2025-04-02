@@ -1,12 +1,12 @@
 ---
-date: "2025-03-05 10:33"
-updated: "2025-03-11T15:55:00+08:00"
+date: 2025-03-05 10:33
 tags:
   - ocpp
   - Everest
 link: 
 publish: true
 share: true
+updated: 2025-04-02T21:01+08:00
 ---
 
 # 项目依赖
@@ -283,6 +283,7 @@ ChargePoint是OCPP模块的核心组件，负责所有OCPP通信：
 - 会话管理：处理认证和会话状态
 - 事务处理：管理充电事务的开始、进行和结束
 - 配置管理：处理配置请求和更新
+
 ### 接口实现
 
 #### ocpp_1_6_charge_pointImpl

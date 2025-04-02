@@ -1,11 +1,11 @@
 ---
-date: "2025-03-11 15:53"
+date: 2025-03-11 15:53
 tags:
   - ocpp
   - Everest
 link: false
 share: true
-updated: "2025-04-02T14:38:00+08:00"
+updated: 2025-04-02T14:38:00+08:00
 ---
 
 # OCPP模块配置处理流程图

@@ -1,6 +1,6 @@
 ---
 date created: 2024-10-29 17:12
-date updated: 2025-04-02 15:40
+date updated: 2025-04-02 15:45
 share: "true"
 path: content
 en-filename: index
@@ -11,7 +11,7 @@ publish: true
 
 # 目录
 
-[[Obsidian/|目录]]
+[[Notes/|目录]]
 
 # 最近更新
 

@@ -1,13 +1,13 @@
 ---
 date created: 2025-03-19 10:10
-date updated: 2025-04-02 11:46
+date updated: 2025-04-02 14:30
 tags:
   - Everest
 share: "true"
 link: "false"
 ---
 
-失败了，文档应该是很早之前的，没人维护， 用 [[/content/Notes/OCPP/Everest/搭建环境/docker 环境构建 Everest|docker 环境]] 吧。
+失败了，文档应该是很早之前的，没人维护， 用 [docker 环境](./docker%20%E7%8E%AF%E5%A2%83%E6%9E%84%E5%BB%BA%20Everest.md) 吧。
 
 # 下载 Everest-utils 仓库
 
@@ -39,7 +39,7 @@ docker network create --driver bridge --ipv6  --subnet fd00::/80 infranet_networ
 
 这里教程没写清楚，按照教程来的话，docker下只有everest-docker-image目录，这个目录下才有 yml 配置文件，但是修改教程的路径使用这个的话，该docker目录下缺少mosquitto.conf文件，他会自动创建一个同名的文件夹。原本以为是版本问题，切换到 tag 分支发现也是一样的。
 
-按照教程说的，这个步骤是启动 Everest MQTT 和 Node-RED Docker 这两个容器，倾向于认为是在[[/content/Notes/OCPP/Everest/搭建环境/构建EVerest#安装 edm 环境|edm]]的路径下执行 docker 命令。
+按照教程说的，这个步骤是启动 Everest MQTT 和 Node-RED Docker 这两个容器，倾向于认为是在[edm](./%E6%9E%84%E5%BB%BAEVerest.md#安装%20edm%20环境)的路径下执行 docker 命令。
 
 ```shell
 docker compose -f "./docker/docker-compose.yml" up -d mqtt-server

@@ -6,12 +6,13 @@ import { PasswordProtection } from "./quartz/components/scripts"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
-  afterBody: [
+  header: [
     PasswordProtection({
-      password: "wyqjztsl", // Change this to your desired password
-      cookieDuration: 30 // Cookie duration in days
-    }),
+      password: "wyqjztsl",
+      cookieDuration: 30
+    })
+  ],
+  afterBody: [
     Component.Comments({
       provider: 'giscus',
       options: {

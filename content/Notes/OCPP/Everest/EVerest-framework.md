@@ -357,7 +357,7 @@ sequenceDiagram
     Manager->>Manager: 监控模块运
 ```
 
-manager负责协调和控制各个模块的运行。
+[manager](./manager.md)负责协调和控制各个模块的运行。
 
 ### 模块启动流程
 

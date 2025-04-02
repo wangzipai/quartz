@@ -1,11 +1,11 @@
 ---
-date: 2024-12-16 16:52
+date: "2024-12-16 16:52"
 updated: "2024-12-16T17:08:00+08:00"
 tags:
   - 工具
   - AI
-share: "true"
-link: "false"
+share: true
+link: false
 ---
 
 因为gpt翻译pdf不太方便，所以使用ciciai进行辅助翻译。

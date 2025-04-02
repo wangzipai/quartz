@@ -1,11 +1,11 @@
 ---
-date: 2024-10-31 16:55
+date: "2024-10-31 16:55"
 updated: "2024-12-03T21:44:00+08:00"
 tags:
   - java
   - 数据库
-share: "true"
-link: "false"
+share: true
+link: false
 ---
 
 **JDBC**（Java Database Connectivity）是Java语言中的一套API，用于与各种数据库进行交互。它提供了一种标准的方法来连接、查询、更新和管理数据库中的数据。以下是一些关于JDBC的基本概念和功能：

@@ -4,8 +4,8 @@ updated: "2025-03-27T11:37:00+08:00"
 tags:
   - ocpp201
   - Everest
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 ```mermaid

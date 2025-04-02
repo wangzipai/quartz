@@ -1,10 +1,10 @@
 ---
-date: 2025-03-13 15:13
+date: "2025-03-13 15:13"
 updated: "2025-03-14T14:25:00+08:00"
 tags:
   - Everest
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 manager程序的主要源码位于everest-framework/src/manager.cpp，是EVerest框架的核心组件，它担任着整个系统的"管理员"角色，==负责协调和控制各个模块的运行==。

@@ -3,8 +3,8 @@ created: "2025-03-27T10:17:00+08:00"
 updated: "2025-04-02T11:41:00+08:00"
 tags:
   - ocpp201
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 # N诊断

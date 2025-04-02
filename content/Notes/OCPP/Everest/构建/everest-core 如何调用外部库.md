@@ -3,8 +3,8 @@ created: "2025-03-31T16:21:00+08:00"
 updated: "2025-04-02T14:35:00+08:00"
 tags:
   - Everest
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 以 libocpp 库为例

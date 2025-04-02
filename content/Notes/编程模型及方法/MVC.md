@@ -1,10 +1,10 @@
 ---
-date: 2024-10-31 17:03
+date: "2024-10-31 17:03"
 updated: "2024-12-03T21:44:00+08:00"
 tags:
   - 设计模式
-share: "true"
-link: "false"
+share: true
+link: false
 ---
 
 MVC 是“模型-视图-控制器”（Model-View-Controller）的缩写，是一种设计模式，常用于构建用户界面和管理应用程序的结构。它将应用程序分为三个主要组件：

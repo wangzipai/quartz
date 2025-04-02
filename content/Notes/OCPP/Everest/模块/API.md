@@ -3,8 +3,8 @@ created: "2025-03-24T16:35:00+08:00"
 updated: "2025-04-02T16:15:00+08:00"
 tags:
   - Everest
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 # API模块分析

@@ -1,12 +1,12 @@
 ---
-date: 2025-03-10 15:54
+date: "2025-03-10 15:54"
 updated: "2025-03-10T17:26:00+08:00"
 tags:
   - Everest
   - ocpp
 publish: true
 link: 
-share: "true"
+share: true
 ---
 
 liblog 是 EVerest 框架的一个 C++ 日志和异常处理库,它基于 Boost.Log 提供了统一的日志基础设施。

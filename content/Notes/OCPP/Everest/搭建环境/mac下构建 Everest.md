@@ -3,8 +3,8 @@ created: "2025-03-19T10:10:00+08:00"
 updated: "2025-04-02T14:30:00+08:00"
 tags:
   - Everest
-share: "true"
-link: "false"
+share: true
+link: false
 ---
 
 失败了，文档应该是很早之前的，没人维护， 用 [docker 环境](./docker%20%E7%8E%AF%E5%A2%83%E6%9E%84%E5%BB%BA%20Everest.md) 吧。

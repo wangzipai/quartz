@@ -1,13 +1,12 @@
 ---
 created: "2024-10-29T17:12:00+08:00"
-updated: "2025-04-02T16:09:00+08:00"
-share: "true"
+share: true
 path: content
 en-filename: index
 title: 首页
-updated: 2024-12-05 15:48
+updated: "2024-12-05 15:48"
 publish: true
-link: "false"
+link: false
 ---
 
 # 目录

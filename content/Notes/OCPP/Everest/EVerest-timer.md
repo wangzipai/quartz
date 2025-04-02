@@ -1,13 +1,12 @@
 ---
-date: 2025-03-05 15:51
-updated: "2025-03-11T11:42:00+08:00"
+date: "2025-03-05 15:51"
 tags:
   - Everest
   - ocpp
 publish: true
 link: 
-share: "true"
-updated: 2025-03-24T20:22:00+08:00
+share: true
+updated: "2025-03-24T20:22:00+08:00"
 ---
 
 # 项目概述

@@ -4,8 +4,8 @@ updated: "2025-04-02T16:16:00+08:00"
 tags:
   - ocpp
   - Everest
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 # OCPP模块抽象结构分析

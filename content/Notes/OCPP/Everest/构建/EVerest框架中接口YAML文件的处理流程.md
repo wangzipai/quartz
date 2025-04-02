@@ -1,12 +1,11 @@
 ---
-date: 2025-03-11 17:33
-updated: "2025-03-12T17:46:00+08:00"
+date: "2025-03-11 17:33"
 tags:
   - Everest
   - ocpp
-link: "false"
-share: "true"
-updated: 2025-04-02T14:35:00+08:00
+link: false
+share: true
+updated: "2025-04-02T14:35:00+08:00"
 ---
 
 ```mermaid

@@ -1,10 +1,10 @@
 ---
-date: 2024-10-31 16:48
+date: "2024-10-31 16:48"
 updated: "2024-12-03T21:44:00+08:00"
 tags:
   - 设计模式
-share: "true"
-link: "false"
+share: true
+link: false
 ---
 
 # 什么是DAO？

@@ -1,11 +1,10 @@
 ---
 tags:
   - obsidian
-date: 2024-12-03 11:46
-share: "true"
-link: "false"
-updated: "2025-03-04T10:54:00+08:00"
-updated: 2025-03-25T11:59:00+08:00
+date: "2024-12-03 11:46"
+share: true
+link: false
+updated: "2025-03-25T11:59:00+08:00"
 ---
 
 ## 设置

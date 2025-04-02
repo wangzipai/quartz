@@ -3,8 +3,8 @@ created: "2025-03-24T16:50:00+08:00"
 updated: "2025-03-24T16:54:00+08:00"
 tags:
   - Everest
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 # Auth模块架构图

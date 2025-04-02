@@ -3,8 +3,8 @@ created: "2025-03-24T17:26:00+08:00"
 updated: "2025-04-02T16:13:00+08:00"
 tags:
   - Everest
-link: "false"
-share: "true"
+link: false
+share: true
 title: system
 ---
 

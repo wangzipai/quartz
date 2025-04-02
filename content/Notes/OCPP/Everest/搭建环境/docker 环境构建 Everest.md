@@ -4,8 +4,8 @@ updated: "2025-04-02T11:45:00+08:00"
 tags:
   - docker
   - Everest
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 devcontainer 设置是开发 EVerest 项目的一种便捷方式。它使用 Docker 创建跨不同机器一致的开发环境。

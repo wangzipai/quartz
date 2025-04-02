@@ -1,10 +1,10 @@
 ---
-date: 2025-03-06 18:11
+date: "2025-03-06 18:11"
 updated: "2025-03-07T17:18:00+08:00"
 tags:
   - CPP
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 模板在这里如何工作，特别是类型推导和接口兼容性方面。

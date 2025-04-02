@@ -1,8 +1,8 @@
 ---
-date: 2024-10-31 17:00
+date: "2024-10-31 17:00"
 updated: "2024-12-03T21:44:00+08:00"
-share: "true"
-link: "false"
+share: true
+link: false
 ---
 
 ORM（对象关系映射，Object-Relational Mapping）框架是一种用于==将对象编程语言中的对象与关系型数据库中的数据表进行映射的工具==。它通过提供一个抽象层，使开发者能够以面向对象的方式操作数据库，而无需直接编写SQL语句。

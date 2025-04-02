@@ -2,9 +2,9 @@
 tags:
   - 笔记
   - 卡片盒笔记法
-share: "true"
-link: "false"
-date: 2024-12-03 11:42
+share: true
+link: false
+date: "2024-12-03 11:42"
 updated: "2024-12-03T21:45:00+08:00"
 ---
 

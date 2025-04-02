@@ -1,11 +1,10 @@
 ---
-date: 2025-03-12 21:29
-updated: "2025-03-12T21:42:00+08:00"
+date: "2025-03-12 21:29"
 tags:
   - Everest
-updated: 2025-04-02T14:32:00+08:00
-link: "false"
-share: "true"
+updated: "2025-04-02T14:32:00+08:00"
+link: false
+share: true
 ---
 
 由于 Everest 是高度模块化的，需要多个存储库，这些存储库可以在 GitHub 上找到。为了根据需要获得正确的存储库，可以使用EVerest管理器(edm)。

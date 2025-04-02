@@ -3,8 +3,8 @@ created: "2025-04-01T11:03:00+08:00"
 updated: "2025-04-02T14:16:00+08:00"
 tags:
   - Everest
-link: "false"
-share: "true"
+link: false
+share: true
 ---
 
 # 基于buildroot 编译工具链交叉编译evest-core

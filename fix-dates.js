@@ -66,7 +66,19 @@ function processFile(filePath) {
             const formattedDate = formatDate(dateCreatedMatch[1].trim());
             newFrontmatter = newFrontmatter.replace(
               /date created:\s*(.*?)(\n|$)/,
-              `created: ${formattedDate}$2`
+              `created: "${formattedDate}"$2`
+            );
+            modified = true;
+          }
+        }
+        // 处理已有的created字段但没有引号的情况
+        else if (newFrontmatter.includes('created:')) {
+          const dateCreatedMatch = newFrontmatter.match(/created:\s*(.*?)(\n|$)/);
+          if (dateCreatedMatch && !dateCreatedMatch[1].includes('"')) {
+            const formattedDate = formatDate(dateCreatedMatch[1].trim());
+            newFrontmatter = newFrontmatter.replace(
+              /created:\s*(.*?)(\n|$)/,
+              `created: "${formattedDate}"$2`
             );
             modified = true;
           }
@@ -79,7 +91,19 @@ function processFile(filePath) {
             const formattedDate = formatDate(dateUpdatedMatch[1].trim());
             newFrontmatter = newFrontmatter.replace(
               /date updated:\s*(.*?)(\n|$)/,
-              `updated: ${formattedDate}$2`
+              `updated: "${formattedDate}"$2`
+            );
+            modified = true;
+          }
+        }
+        // 处理已有的updated字段但没有引号的情况
+        else if (newFrontmatter.includes('updated:')) {
+          const dateUpdatedMatch = newFrontmatter.match(/updated:\s*(.*?)(\n|$)/);
+          if (dateUpdatedMatch && !dateUpdatedMatch[1].includes('"')) {
+            const formattedDate = formatDate(dateUpdatedMatch[1].trim());
+            newFrontmatter = newFrontmatter.replace(
+              /updated:\s*(.*?)(\n|$)/,
+              `updated: "${formattedDate}"$2`
             );
             modified = true;
           }
@@ -100,22 +124,33 @@ function processFile(filePath) {
 
 // 主函数
 function main() {
-  const contentDir = path.join(__dirname, 'content');
+  // 处理多个目录
+  const directories = [
+    path.join(__dirname, 'content'),
+    '/Users/wyq/Documents/ROOT'
+  ];
   
-  if (!fs.existsSync(contentDir)) {
-    console.error('找不到 content 目录!');
-    return;
-  }
-
-  console.log('开始修复日期格式...');
-  const markdownFiles = findMarkdownFiles(contentDir);
-  console.log(`找到 ${markdownFiles.length} 个Markdown文件`);
-
-  markdownFiles.forEach(file => {
-    processFile(file);
+  let totalFiles = 0;
+  
+  // 处理每个目录
+  directories.forEach(dir => {
+    if (!fs.existsSync(dir)) {
+      console.error(`找不到目录: ${dir}`);
+      return;
+    }
+    
+    console.log(`开始处理目录: ${dir}`);
+    const markdownFiles = findMarkdownFiles(dir);
+    console.log(`在 ${dir} 中找到 ${markdownFiles.length} 个Markdown文件`);
+    
+    markdownFiles.forEach(file => {
+      processFile(file);
+    });
+    
+    totalFiles += markdownFiles.length;
   });
 
-  console.log('完成!');
+  console.log(`完成! 总共处理了 ${totalFiles} 个文件`);
 }
 
 main(); 

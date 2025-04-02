@@ -56,12 +56,36 @@ export const defaultContentPageLayout: PageLayout = {
           return true
         },
         sort: (f1, f2) => {
-          if (f1.dates && f2.dates) {
-            return f2.dates.created.getTime() - f1.dates.created.getTime()
-          } else if (f1.dates && !f2.dates) {
-            return -1
+          // 尝试从文件路径中提取日期（如果文件名包含日期格式如：2023-04-01-title.md）
+          const extractDateFromPath = (path: string | undefined) => {
+            if (!path) return null;
+            // 匹配YYYY-MM-DD格式的日期
+            const match = path.match(/(\d{4}-\d{2}-\d{2})/);
+            if (match && match[1]) {
+              return new Date(match[1]);
+            }
+            return null;
+          };
+
+          // 首先尝试使用frontmatter日期
+          if (f1.dates?.created && f2.dates?.created) {
+            return f2.dates.created.getTime() - f1.dates.created.getTime();
           }
-          return 1
+          
+          // 如果frontmatter日期不可用，尝试从文件名获取日期
+          const date1 = extractDateFromPath(f1.filePath);
+          const date2 = extractDateFromPath(f2.filePath);
+          
+          if (date1 && date2) {
+            return date2.getTime() - date1.getTime();
+          } else if (date1 && !date2) {
+            return -1;
+          } else if (!date1 && date2) {
+            return 1;
+          }
+          
+          // 默认按文件路径排序
+          return (f1.filePath || '').localeCompare(f2.filePath || '');
         }
       })
     ),

@@ -6,7 +6,7 @@ tags:
   - Everest
 link: "false"
 share: "true"
-date updated: 2025-04-02 14:38
+updated: 2025-04-02T14:38:00+08:00
 ---
 
 # OCPP模块配置处理流程图

@@ -5,7 +5,7 @@ tags:
   - Everest
 link: "false"
 share: "true"
-date updated: 2025-04-02 16:17
+updated: 2025-04-02T16:17:00+08:00
 ---
 
 EV-cli本质上是一个帮助我们**自动生成和管理EVerest项目代码**的工具，就像是一个"代码生成助手"。它主要做这些事：

@@ -6,7 +6,7 @@ tags:
   - ocpp
 link: "false"
 share: "true"
-date updated: 2025-04-02 14:35
+updated: 2025-04-02T14:35:00+08:00
 ---
 
 ```mermaid

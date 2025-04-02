@@ -1,6 +1,6 @@
 ---
-date created: 2024-10-29 17:12
-date updated: 2024-10-29 17:26
+created: 2024-10-29T17:12:00+08:00
+updated: 2024-10-29T17:26:00+08:00
 share: 'true'
 path: content
 en-filename: index

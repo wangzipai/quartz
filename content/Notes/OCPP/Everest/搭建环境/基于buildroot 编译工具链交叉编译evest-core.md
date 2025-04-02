@@ -1,6 +1,6 @@
 ---
 date created: 2025-04-01 11:03
-date updated: 2025-04-02 11:45
+date updated: 2025-04-02 14:16
 tags:
   - Everest
 link: "false"
@@ -56,7 +56,7 @@ set(Boost_NO_SYSTEM_PATHS ON)
 ```sh
 //执行cmake命令
 
-[~/dev/everest/workspace/everest-core/build]$ cmake  -DCMAKE_TOOLCHAIN_FILE=../cross.cmake -D_DEBUG=ON -DCMAKE_BUILD_TYPE=MinSizeRel ..
+[~/dev/everest/workspace/everest-core/build]$ cmake  -DCMAKE_TOOLCHAIN_FILE=../cross.cmake -D_DEBUG=ON -DCMAKE_BUILD_TYPE=MinSizeRel -DEVEREST_ENABLE_PY_SUPPORT=OFF ..
 //然后执行make，12是根据自己ubuntu的cpu核数来，加速编译 
 [~/dev/everest/workspace/everest-core/build]$ make -j12 install    
 //编译完成会在build下生成dist目录

@@ -1,12 +1,17 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import * as ExtraComponent from "./quartz/components"
+import { PasswordProtection } from "./quartz/components/scripts"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
+    PasswordProtection({
+      password: "wyqjztsl", // Change this to your desired password
+      cookieDuration: 30 // Cookie duration in days
+    }),
     Component.Comments({
       provider: 'giscus',
       options: {

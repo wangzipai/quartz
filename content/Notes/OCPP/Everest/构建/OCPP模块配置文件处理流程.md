@@ -74,7 +74,7 @@ config-sil.yaml
 config-sil-ocpp.yaml
 ```
 
-在构建过程中，CMake会为每个配置[[/content/Notes/OCPP/Everest/构建/运行脚本生成过程|生成一个对应的运行脚本]]（如run-sil.sh或run-hil.sh）。运行时，用户通过执行特定的脚本来选择使用哪个配置文件：
+在构建过程中，CMake会为每个配置[生成一个对应的运行脚本](./%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E8%BF%87%E7%A8%8B.md)（如run-sil.sh或run-hil.sh）。运行时，用户通过执行特定的脚本来选择使用哪个配置文件：
 
 ```c
 # 运行使用sil配置的EVerest

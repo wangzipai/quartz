@@ -1,6 +1,6 @@
 ---
 created: 2025-04-07T15:32+08:00
-updated: 2025-04-07T15:39+08:00
+updated: 2025-04-08T14:39+08:00
 tags:
   - Everest
 link: 
@@ -9,7 +9,7 @@ share: "true"
 
 # 问题
 
-执行 octt 测试用例 N56 后，会导致 ocpp 进程重启，随后所有的 ocpp 指令下发后都会类型转换错误。向平台输出错误日志
+执行 octt 测试用例 N56 后，[SetVariableMonitoring](./SetVariableMonitoring.md)报文会导致数据库存储错误的数据，会导致 ocpp 进程重启，随后所有的 ocpp 指令下发后都会类型转换错误。向平台输出错误日志
 
 ```shell
 2025-04-07T06:44:17.737Z: ChargePoint>CentralSystem Unknown  
@@ -24,8 +24,33 @@ share: "true"
 
 # 解决方法
 
+## 临时解决
+
 ```shell
 rm /share/everest/modules/OCPP201/device_model_storage.db
+```
+
+## 根本解决
+
+将下面的的`k.eventNotificationType = conversions::string_to_event_notification_enum(j.at("eventNotificationType"));`直接注释掉。因为 [SetVariableMonitoring](./SetVariableMonitoring.md#VariableMonitoringType) 结构体并没有 `eventNotificationType`这个字段。这会导致数据库存入错误的数据，产生这个 BUG。
+
+```c
+/// \brief Conversion from a given json object \p j to a given VariableMonitoring \p k
+void from_json(const json& j, VariableMonitoring& k) {
+	// the required parts of the message
+	k.id = j.at("id");
+	k.transaction = j.at("transaction");
+	k.value = j.at("value");
+	k.type = conversions::string_to_monitor_enum(j.at("type"));
+	k.severity = j.at("severity");
+	//k.eventNotificationType = conversions::string_to_event_notification_enum(j.at("eventNotificationType"));
+	//std::cout << "eventNotificationType: " << j.at("eventNotificationType") << std::endl;
+
+	// the optional parts of the message
+	if (j.contains("customData")) {
+		k.customData.emplace(j.at("customData"));
+	}
+}
 ```
 
 # 为什么删除数据库解决了问题
@@ -95,30 +120,3 @@ sequenceDiagram
     OCPP->>Database: 创建新的数据结构，使用默认值
     OCPP-->>Client: 正常处理命令
 ```
-
-## 为什么会出现这个问题
-
-可能的原因：
-
-**数据损坏**：数据库可能在某个时刻被意外修改
-
-## 为什么删除解决了问题
-
-删除数据库后，OCPP 服务重新初始化了一个全新的数据库，使用了正确的枚举值。系统状态被重置为干净状态，没有无效数据。
-
-从 `charge_point.cpp` 的初始化过程我们可以看到，当系统启动时，它会检查数据库完整性并初始化所有组件：
-
-```cpp
-ChargePoint::ChargePoint(...) {
-    // ...
-    initialize(evse_connector_structure, message_log_path);
-}
-
-void ChargePoint::initialize(...) {
-    this->device_model->check_integrity(evse_connector_structure);
-    this->database_handler->open_connection();
-    // ...
-}
-```
-
-当数据库不存在时，系统会创建一个新的并使用默认值，避免了无效枚举问题。

@@ -9,7 +9,7 @@ share: "true"
 
 # 问题
 
-执行 octt 测试用例 N56 后，[SetVariableMonitoring](./SetVariableMonitoring.md)报文会导致数据库存储错误的数据，会导致 ocpp 进程重启，随后所有的 ocpp 指令下发后都会类型转换错误。向平台输出错误日志
+执行 octt 测试用例 N56 后，[../../2.0.1解读/L 固件管理/SetVariableMonitoring](../../2.0.1%E8%A7%A3%E8%AF%BB/L%20%E5%9B%BA%E4%BB%B6%E7%AE%A1%E7%90%86/SetVariableMonitoring.md)报文会导致数据库存储错误的数据，会导致 ocpp 进程重启，随后所有的 ocpp 指令下发后都会类型转换错误。向平台输出错误日志
 
 ```shell
 2025-04-07T06:44:17.737Z: ChargePoint>CentralSystem Unknown  
@@ -32,7 +32,7 @@ rm /share/everest/modules/OCPP201/device_model_storage.db
 
 ## 根本解决
 
-将下面的的`k.eventNotificationType = conversions::string_to_event_notification_enum(j.at("eventNotificationType"));`直接注释掉。因为 [SetVariableMonitoring](./SetVariableMonitoring.md#VariableMonitoringType) 结构体并没有 `eventNotificationType`这个字段。这会导致数据库存入错误的数据，产生这个 BUG。
+将下面的的`k.eventNotificationType = conversions::string_to_event_notification_enum(j.at("eventNotificationType"));`直接注释掉。因为 [SetVariableMonitoring](../../2.0.1%E8%A7%A3%E8%AF%BB/L%20%E5%9B%BA%E4%BB%B6%E7%AE%A1%E7%90%86/SetVariableMonitoring.md#VariableMonitoringType) 结构体并没有 `eventNotificationType`这个字段。这会导致数据库存入错误的数据，产生这个 BUG。
 
 ```c
 /// \brief Conversion from a given json object \p j to a given VariableMonitoring \p k

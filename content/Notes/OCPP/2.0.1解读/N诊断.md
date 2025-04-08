@@ -1,6 +1,6 @@
 ---
-created: "2025-03-27T10:17:00+08:00"
-updated: "2025-04-02T11:41:00+08:00"
+created: 2025-03-27T10:17:00+08:00
+updated: 2025-04-07T11:59+08:00
 tags:
   - ocpp201
 link: false
@@ -26,13 +26,13 @@ share: true
 
 ### N01 - 检索日志信息 (Retrieve Log Information)
 
-这个用例涵盖了从充电站获取日志信息的功能。csms可以请求充电站将包含日志信息的文件上传到给定位置(URL)。此日志文件的格式未指定。充电站上传一个日志文件，并通过向csms发送状态通知来提供有关上传状态的信息。
+这个用例涵盖了从充电站获取日志信息的功能。csms可以请求充电站将包含日志信息的文件上传到给定位置(URL)。此日志文件的格式未指定。充电站上传一个日志文件，并通过向csms发送状态通知来提供有关上传状态的信息。对应 OCTT 用例 N25。
 
 #### 流程
 
 1. CSMS向充电站发送GetLogRequest。
 2. 充电站回复一个GetLogResponse。
-3. 充电站发送一个带有状态为Uploading的LogStatusNotificationRequest。
+3. 充电站发送一个带有状态为Uploading的 LogStatusNotificationRequest。
 4. CSMS回复一个LogStatusNotificationResponse，确认状态更新请求。
 5. 诊断文件上传中。
 6. 充电站发送一个带有状态为Uploaded的LogStatusNotificationRequest。
@@ -55,6 +55,16 @@ sequenceDiagram
     end
     CSMS->>CS: GetLogResponse(status)
 ```
+
+LogStatusNotificationRequest报文，用于上报上传进度和结果。
+
+充电桩在日志文件上传的不同阶段会发送 LogStatusNotificationRequest 消息，告知 CSMS 当前的状态。这包括：
+
+- 上传中 (Uploading)：当充电桩开始上传日志文件时发送。
+- 已上传 (Uploaded)：当充电桩成功完成日志文件上传后发送。
+- 上传失败 (UploadFailure, BadMessage, PermissionDenied, NotSupportedOperation)：当日志文件上传失败时发送，状态值会尽量详细地描述失败的原因。
+- 已接受已取消 (AcceptedCanceled)：当充电桩正在组装或上传日志文件时收到新的 GetLogRequest，充电桩取消当前的上传并接受新的请求时发送。
+- 空闲 (Idle)：当 CSMS 通过 TriggerMessageRequest 请求 LogStatusNotification，并且充电桩当前没有进行日志文件上传时发送。
 
 #### 要求
 

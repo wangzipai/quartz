@@ -1,8 +1,8 @@
 ---
-date: "2025-03-12 21:44"
+date: 2025-03-12 21:44
 tags:
   - Everest
-updated: "2025-04-02T11:42:00+08:00"
+updated: 2025-04-02T11:42:00+08:00
 link: false
 share: true
 ---
@@ -55,4 +55,4 @@ cmake ..
 make -j8 install
 ```
 
-mac环境下，cmake 的时候会缺少 libcap 环境，无法正常构建。~~参考mac下构建 Everest~~      [[/content/Notes/OCPP/Everest/搭建环境/docker 环境构建 Everest|docker 环境构建 Everest]]。
+mac环境下，cmake 的时候会缺少 libcap 环境，无法正常构建。~~参考[mac下构建 Everest](./mac%E4%B8%8B%E6%9E%84%E5%BB%BA%20Everest.md)~~      [docker 环境构建 Everest](./docker%20%E7%8E%AF%E5%A2%83%E6%9E%84%E5%BB%BA%20Everest.md)。

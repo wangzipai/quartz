@@ -1,6 +1,6 @@
 ---
-created: "2025-04-02T11:40:00+08:00"
-updated: "2025-04-02T11:40:00+08:00"
+created: 2025-04-02T11:40:00+08:00
+updated: 2025-04-09T18:12+08:00
 tags:
   - ocpp201
 link: false
@@ -29,7 +29,7 @@ share: true
 
 ### 启动充电站
 
-#### 冷启动充电站
+#### B01-冷启动充电站
 
 此用例描述了CSMS如何控制哪些充电站可以连接到它。为了能够控制连接到CSMS的充电站，充电站需要发送`BootNotificationRequest`。此请求包含有关充电站的一些通用信息。
 
@@ -41,9 +41,45 @@ share: true
 6. 恢复正常运行。
 7. 充电站向CSMS发送`HeartbeatRequest`。
 
-![](../../../图片/Cold Boot Charging Station.png)
+```mermaid
+sequenceDiagram
+    participant CS as Charging Station
+    participant CSMS as Central System
 
-#### 冷启动充电站 - 待处理
+    CS->>CSMS: BootNotificationRequest (充电站信息, 启动原因等)
+    CSMS->>CS: BootNotificationResponse (status: Accepted/Pending/Rejected, interval)
+    alt status is Accepted
+        opt initial StatusNotification (Unavailable)
+            loop for each Connector
+                CS->>CSMS: StatusNotificationRequest (connectorStatus: Unavailable)
+                CSMS->>CS: StatusNotificationResponse
+            end
+        end
+        loop for each Connector
+            alt connector was Unavailable/Reserved before reboot
+                CS->>CSMS: StatusNotificationRequest (connectorStatus: Unavailable/Reserved/Faulted)
+            else transaction ongoing before reboot
+                CS->>CSMS: StatusNotificationRequest (connectorStatus: Occupied)
+            else
+                CS->>CSMS: StatusNotificationRequest (connectorStatus: Available)
+            end
+            CSMS->>CS: StatusNotificationResponse
+        end
+        CS->>CSMS: (恢复正常运行)
+        loop every interval
+            CS->>CSMS: HeartbeatRequest
+            CSMS->>CS: HeartbeatResponse (currentTime)
+        end
+    else status is Pending
+        CS->>CSMS: (等待 CSMS 指示)
+    else status is Rejected
+        CS->>CSMS: (停止发送 OCPP 消息, 需检查配置)
+    end
+```
+
+总结来说，完整的 B01 冷启动流程包括充电站发送启动通知，CSMS 响应注册状态和心跳间隔，充电站（可选地）先报告连接器为不可用，然后报告每个连接器的当前状态（根据启动前的状态），之后恢复正常运行，并定期发送心跳消息以保持与 CSMS 的连接。
+
+#### B02-冷启动充电站 - 待处理
 
 1. 充电站上电。
 2. 充电站向CSMS发送`BootNotificationRequest`。

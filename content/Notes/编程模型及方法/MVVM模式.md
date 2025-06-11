@@ -1,10 +1,10 @@
 ---
-created: "2024-10-10T10:28:00+08:00"
+created: 2024-10-10T10:28:00+08:00
 tags:
   - 架构
 share: true
 link: false
-updated: "2024-12-19 20:13"
+updated: 2024-12-19 20:13
 ---
 
 MVVM 模式作为一种先进的架构模式，为我们提供了一种==将数据、业务逻辑和用户界面分离==的解决方案。它强调数据驱动，通过双向数据绑定简化了界面与数据的交互，使得开发者能够更专注于业务逻辑的实现。本文旨在解析 MVVM 模式的原理和应用，帮助读者更好地理解其核心概念，掌握其在实际项目中的使用方法。
@@ -12,7 +12,7 @@ MVVM 模式作为一种先进的架构模式，为我们提供了一种==将数�
 
 # 什么是 MVVM 模式
 
-MVVM 是 Model-View-ViewModel 的简写，即模型 - 视图 - 视图模型。它是 [[/content/Notes/编程模型及方法/MVC|MVC]]（Model-View-Controller）架构的一种改进版，有助于将应用程序的业务和表示逻辑与用户界面（UI）清晰分离。
+MVVM 是 Model-View-ViewModel 的简写，即模型 - 视图 - 视图模型。它是 [MVC](./MVC.md)（Model-View-Controller）架构的一种改进版，有助于将应用程序的业务和表示逻辑与用户界面（UI）清晰分离。
 在 MVVM 模式中，应用程序的 UI 以及基础表示和业务逻辑被分成三个独立的类：
 
 - **视图（View）**：用于封装 UI 和 UI 逻辑。
@@ -69,7 +69,7 @@ Vue.js是一个基于MVVM 模式的 JavaScript 框架，它非常适用于构建
 
 # MVVM 与传统 MVC 的区别
 
-MVVM 模式与 [[/content/Notes/编程模型及方法/MVC|MVC]]（Model-View-Controller）模式相比，存在以下主要区别：
+MVVM 模式与 [MVC](./MVC.md)（Model-View-Controller）模式相比，存在以下主要区别：
 
 ## 通信方向
 

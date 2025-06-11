@@ -1,6 +1,6 @@
 ---
-created: "2025-03-19T15:42:00+08:00"
-updated: "2025-04-02T11:45:00+08:00"
+created: 2025-03-19T15:42:00+08:00
+updated: 2025-04-02T11:45:00+08:00
 tags:
   - docker
   - Everest
@@ -65,7 +65,7 @@ cmake ..
 make -j$(nproc) install
 ```
 
-这里对比[[/content/Notes/OCPP/Everest/搭建环境/构建EVerest|构建EVerest]]的内容，不需要先构建 edm 的内容。在devcontainer环境中，很多初始步骤已经完成了，这与标准安装步骤不同。
+这里对比[构建EVerest](./%E6%9E%84%E5%BB%BAEVerest.md)的内容，不需要先构建 [edm](../%E6%9E%84%E5%BB%BA/edm.md) 的内容。在devcontainer环境中，很多初始步骤已经完成了，这与标准安装步骤不同。
 在devcontainer中：
 
 - EDM==已预安装== - edm命令已在/usr/local/bin/edm可用

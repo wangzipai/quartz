@@ -1,6 +1,6 @@
 ---
-date: "2024-10-31 16:48"
-updated: "2024-12-03T21:44:00+08:00"
+date: 2024-10-31 16:48
+updated: 2024-12-03T21:44:00+08:00
 tags:
   - 设计模式
 share: true
@@ -44,7 +44,7 @@ public interface UserDAO {
 
 ## DAO实现类
 
-实现上述接口，并包含具体的数据访问逻辑。例如，使用[[/content/Notes/编程语言/Java/JDBC|JDBC]]来连接数据库：
+实现上述接口，并包含具体的数据访问逻辑。例如，使用[JDBC](../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/JDBC.md)来连接数据库：
 
 ```java
 public class UserDAOImpl implements UserDAO {

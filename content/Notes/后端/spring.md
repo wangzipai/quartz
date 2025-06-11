@@ -1,6 +1,6 @@
 ---
-date: "2024-10-28 18:11"
-updated: "2024-12-03T21:45:00+08:00"
+date: 2024-10-28 18:11
+updated: 2024-12-03T21:45:00+08:00
 tags:
   - spring
   - 后端
@@ -19,7 +19,7 @@ Spring工厂的作用就是==生产和管理 Spring 容器中的Bean==，控制�
 要学习Spring的内容如下：
 
 - IoC：控制反转
-- DI：[[/content/Notes/编程模型及方法/依赖注入|依赖注入]]
+- DI：[依赖注入](../%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5.md)
 - Spring AOP：面向切面编程技术，为Spring事务管理打下基础。
 - Spring Transaction management：Spring事务管理。
 - Spring Web MVC（不包含在本课程内，后面单独学习）：简称Spring MVC框架，用来简化JavaWEB开发，当使用Spring MVC框架后，就不用再编写Servlet了。也就不再需要itcast-tools工具中BaseServlet类了。
@@ -96,17 +96,17 @@ Web层由Spring-web、Spring-webmvc、Spring-websocket和Portlet模块组成。
 - Spring-websocket模块：Spring4.0以后新增的模块，它提供了WebSocket和SocketJS的实现。
 - Portlet模块：类似于Servlet模块的功能，提供了Portlet环境下的MVC实现。
 
-## Spring [[/content/Notes/编程模型及方法/DAO|DAO]]模块
+## Spring [DAO](../%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/DAO.md)模块
 
-提供了一个[[/content/Notes/编程语言/Java/JDBC|JDBC]]的抽象层和异常层次结构，消除了烦琐的JDBC编码和数据库厂商特有的错误代码解析， 用于简化JDBC。
+提供了一个[JDBC](../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/JDBC.md)的抽象层和异常层次结构，消除了烦琐的JDBC编码和数据库厂商特有的错误代码解析， 用于简化JDBC。
 
 ## Spring ORM模块
 
-Spring插入了若干个[[/content/Notes/编程模型及方法/ORM|ORM]]框架，提供了ORM对象的关系工具，其中包括Hibernate，JDO和IBatisSQL Map等，所有这些都遵从Spring的通用事务和DAO异常层次结构
+Spring插入了若干个[ORM](../%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/ORM.md)框架，提供了ORM对象的关系工具，其中包括Hibernate，JDO和IBatisSQL Map等，所有这些都遵从Spring的通用事务和DAO异常层次结构
 
 ## Spring MVC模块
 
-Sping [[/content/Notes/编程模型及方法/MVC|MVC]]框架是一个全功能的构建Web应用程序的MVC实现。
+Sping [MVC](../%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/MVC.md)框架是一个全功能的构建Web应用程序的MVC实现。
 
 SpringMVC框架提供清晰的角色划分：控制器、验证器、命令对象、表单对象和模型对象、分发器、处理器映射和视图解析器，Spring支持多种视图技术。
 
@@ -147,7 +147,7 @@ IOC容器和对象的创建过程如下：
 
 ## Spring依赖注入原理
 
-[[/content/Notes/编程模型及方法/依赖注入|依赖注入]]（Dependency Injection，DI）是Spring框架的一个核心特性，它通过配置或者注解的方式，将一个对象依赖的其他对象注入进来。
+[依赖注入](../%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%96%B9%E6%B3%95/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5.md)（Dependency Injection，DI）是Spring框架的一个核心特性，它通过配置或者注解的方式，将一个对象依赖的其他对象注入进来。
 
 如下图所示：
 ![image.png|500](https://raw.githubusercontent.com/wangzipai/my_ob_pic/main/20241030175939.png)
@@ -167,7 +167,7 @@ Spring AOP （Aspect Orient Programming）,直译过来就是 ==面向切面编�
 
 面向切面编程，实现==在不修改源代码的情况下给程序动态统一添加额外功能的一种技术==，如下图所示：
 ![image.png](https://raw.githubusercontent.com/wangzipai/my_ob_pic/main/20241030181027.png)
-Spring AOP 实现 AOP 采用的是[[/content/Notes/后端/动态代理|动态代理]]的方式，**通过代理对象实现对目标对象的方法进行拦截，从而达到切面的效果**。
+Spring AOP 实现 AOP 采用的是[动态代理](./%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86.md)的方式，**通过代理对象实现对目标对象的方法进行拦截，从而达到切面的效果**。
 
 在 Spring AOP 中，代理对象主要有两种类型：
 

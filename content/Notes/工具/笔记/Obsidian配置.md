@@ -1,10 +1,10 @@
 ---
 tags:
   - obsidian
-date: "2024-12-03 11:46"
+date: 2024-12-03 11:46
 share: true
 link: false
-updated: "2025-03-25T11:59:00+08:00"
+updated: 2025-03-25T11:59:00+08:00
 ---
 
 ## 设置
@@ -42,11 +42,11 @@ updated: "2025-03-25T11:59:00+08:00"
 
 ### 格式化
 
-[[Obsidian配置#Markdown prettifier|Notes/工具/笔记/Obsidian配置 > Markdown prettifier]]
+[Notes/工具/笔记/Obsidian配置 > Markdown prettifier](Obsidian%E9%85%8D%E7%BD%AE.md#Markdown%20prettifier)
 
 ### 代码块
 
-[[Obsidian配置#Code block from selection|Notes/工具/笔记/Obsidian配置 > Code block from selection]]
+[Notes/工具/笔记/Obsidian配置 > Code block from selection](Obsidian%E9%85%8D%E7%BD%AE.md#Code%20block%20from%20selection)
 使用这个插件，设置快捷键为[ctrl + shift + K]，默认C语言
 mac中使用[control+command+C],设置C语言，使用[control+command+j],设置js语言
 
@@ -172,7 +172,7 @@ Codeblock Customizer
 
 ### 边注
 
-[[/content/Notes/工具/笔记/如何在 Obsidian 中优雅的进行注释（边注）|如何在 Obsidian 中优雅的进行注释（边注）]]
+[如何在 Obsidian 中优雅的进行注释（边注）](./%E5%A6%82%E4%BD%95%E5%9C%A8%20Obsidian%20%E4%B8%AD%E4%BC%98%E9%9B%85%E7%9A%84%E8%BF%9B%E8%A1%8C%E6%B3%A8%E9%87%8A%EF%BC%88%E8%BE%B9%E6%B3%A8%EF%BC%89.md)
 
 ### 流程图
 
